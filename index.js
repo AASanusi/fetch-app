@@ -14,7 +14,9 @@
 
 async function fetchData() {
     try{
-        const response = await fetch("https://pokeapi.co/api/v2/pokemon/squidward")
+
+        const pokemonName = document.getElementById("pokemonName").ariaValueMax.toLowerCase()
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
         if(response.ok){
             const data = await response.json();
             console.log(data);
